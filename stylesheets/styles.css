@@ -176,12 +176,14 @@ body {
   cursor: pointer;
 }
 
-.formSubmit button#generate {
+.formSubmit button#generate,
+.formSubmit button#generate:hover:active {
   color: #fff;
   background-color: #000;
 }
 
-.formSubmit button#clear {
+.formSubmit button#clear,
+.formSubmit button#clear:hover:active {
   color: #000;
   background-color: #fff;
 }
@@ -194,6 +196,11 @@ body {
 .formSubmit button#clear:hover {
   color: #fff;
   background-color: #ee7700;
+}
+
+.formSubmit button#generate:focus,
+.formSubmit button#clear:focus {
+  outline: none;
 }
 
 .orangeFont {
