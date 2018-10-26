@@ -5,9 +5,9 @@
 class ShapeGenerator {
   constructor() {
     this.state = {
-      shapes:           [],      // Onscreen shapes are stored here
-      scrolling:        false,   // Are shapes currently scrolling upward?
-      currentShapeId:   1        // ID number for next created shape
+      shapes:           [],      // - Onscreen shapes are stored here
+      scrolling:        false,   // - Are shapes currently scrolling upward?
+      currentShapeId:   1        // - ID number for next created shape
     }
 
     this.clearCanvas          = this.clearCanvas.bind(this);    // Binding methods
@@ -154,7 +154,7 @@ class ShapeGenerator {
 
   scrollShapesUp() {
     // Scrolls all the shapes upward.
-    // When a shape is offscreen, it is removed from the Object state's shapes array.
+    // When a shape is offscreen, it is removed from the DOM and the Object state's shapes array.
     // When the shapes array is empty, the scroll loop stops.
 
     if (this.state.shapes.length) {
@@ -167,17 +167,19 @@ class ShapeGenerator {
           let shape     = this.state.shapes.shift();
           let positions = shape.getBoundingClientRect();
 
-          if (positions.bottom >= 0) {
+          if (positions.bottom >= 0) {    // Shape is still onscreen
             let top = Number(shape.style.top.slice(0, -2));
             this.state.shapes.push(shape);
-            shape.style.top = `${top - 0.5}px`;
+            shape.style.top = `${top - 1}px`;
+          } else {                        // Shape is offscreen
+            shape.remove();
           }
         }
 
-        this.scrollShapesUp();
-      }, 80);
+        this.scrollShapesUp();  // repeat while shapes are onscreen
+      }, 45);
     } else {
-      this.state.scrolling = false;
+      this.state.scrolling = false;  // breaks loop
     }
   }
 

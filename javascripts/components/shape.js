@@ -32,7 +32,7 @@ class Shape {
   }
 
   addDogeToShape(outerShape, innerShape) {  // Adds shiba image to a shape.
-    getDoge()  // From api_services folder. Returns a Promise.
+    getDoge()  // Function is from the api_services folder. Returns a Promise.
       .then((imageSrc) => {
         const image = document.createElement('img');
         innerShape.appendChild(image);
