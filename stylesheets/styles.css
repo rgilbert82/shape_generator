@@ -1,0 +1,250 @@
+/* STYLES */
+
+
+/* ========================================================================= */
+/* CONTAINER */
+/* ========================================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+#canvas {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+}
+
+
+/* ========================================================================= */
+/* SHAPES */
+/* ========================================================================= */
+
+.shape {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.shape div {
+  width: 84%;
+  height: 84%;
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.shape div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.triangle {
+  clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+  -webkit-clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+}
+
+.triangle div {
+  clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+  -webkit-clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+}
+
+.circle,
+.circle div {
+  border-radius: 50%;
+}
+
+.orange {
+  background-color: #ee7700;
+}
+
+.blue {
+  background-color: #113379;
+}
+
+.green {
+  background-color: #116655;
+}
+
+
+/* ========================================================================= */
+/* CONTROL PANEL */
+/* ========================================================================= */
+
+#controlPanel {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 30px 20px;
+}
+
+#controlPanel header {
+  margin-bottom: 40px;
+}
+
+#controlPanel header h1 {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 100;
+}
+
+#controlPanel header p {
+  font-weight: 200;
+}
+
+#controlPanel .formField {
+  margin-bottom: 20px;
+}
+
+#controlPanel .formField h2 {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.radioButtonList li {
+  display: inline-block;
+  width: 110px;
+}
+
+.radioButtonList label {
+  font-weight: 300;
+}
+
+.radioButtonList label:hover {
+  cursor: pointer;
+}
+
+.radioButtonList input[type="radio"] {
+  display:none;
+}
+
+.radioButtonList input[type="radio"] + label span {
+  position: relative;
+  margin-right: 8px;
+  content: '';
+  display:inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.radioButtonList input[type="radio"] + label span span {
+  display: none;
+}
+
+.radioButtonList input[type="radio"]:checked + label span span {
+  display: inline-block;
+  border: 2px solid #fff;
+  background-color: #000;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.formSubmit button {
+  width: 110px;
+  text-align: center;
+  padding: 5px;
+  font-weight: normal;
+  border: 1px solid #000;
+}
+
+.formSubmit button:hover {
+  cursor: pointer;
+}
+
+.formSubmit button#generate {
+  color: #fff;
+  background-color: #000;
+}
+
+.formSubmit button#clear {
+  color: #000;
+  background-color: #fff;
+}
+
+.formSubmit button#generate:hover {
+  color: #fff;
+  background-color: #116655;
+}
+
+.formSubmit button#clear:hover {
+  color: #fff;
+  background-color: #ee7700;
+}
+
+.orangeFont {
+  color: #ee7700;
+}
+
+.blueFont {
+  color: #0556FC;
+}
+
+.greenFont {
+  color: #1A856F;
+}
+
+
+/* ========================================================================= */
+/* BREAKPOINTS */
+/* ========================================================================= */
+
+@media(max-width: 400px) {
+  .radioButtonList li {
+    display: inline-block;
+    width: 90px;
+  }
+
+  .formSubmit button {
+    width: 90px;
+  }
+}
+
+
+@media(max-width: 350px) {
+  .radioButtonList li {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .formSubmit button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #controlPanel {
+    padding: 2%;
+    width: 92%;
+  }
+}
+
+
+@media(max-height: 600px) {
+  #controlPanel {
+    padding-bottom: 5px;
+  }
+}

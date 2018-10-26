@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>wow much doge!!!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/whitespace-reset.css" />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <script src="javascripts/jquery-3.3.1.min.js"></script>
+  </head>
+
+  <body>
+    <div id="canvas"></div>
+
+    <div id="controlPanel">
+      <header>
+        <h1>Shape Generator</h1>
+        <p>Use the controls below to generate shapes</p>
+      </header>
+
+      <form id="form">
+        <div class="formField">
+          <h2>Select color:</h2>
+          <ul class="radioButtonList">
+            <li>
+              <input type="radio" id="selectColorOrange" class="orangeFont" name="selectColor" value="orange" checked />
+              <label for="selectColorOrange" class="orangeFont"><span><span></span></span>Orange</label>
+            </li>
+            <li>
+              <input type="radio" id="selectColorBlue" name="selectColor" value="blue" />
+              <label for="selectColorBlue" class="blueFont"><span><span></span></span>Blue</label>
+            </li>
+            <li>
+              <input type="radio" id="selectColorGreen" name="selectColor" value="green" />
+              <label for="selectColorGreen" class="greenFont"><span><span></span></span>Green</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="formField">
+          <h2>Select shape:</h2>
+          <ul class="radioButtonList">
+            <li>
+              <input type="radio" id="selectShapeSquare" name="selectShape" value="square" checked />
+              <label for="selectShapeSquare"><span><span></span></span>Square</label>
+            </li>
+            <li>
+              <input type="radio" id="selectShapeTriangle" name="selectShape" value="triangle" />
+              <label for="selectShapeTriangle"><span><span></span></span>Triangle</label>
+            </li>
+            <li>
+              <input type="radio" id="selectShapeCircle" name="selectShape" value="circle" />
+              <label for="selectShapeCircle"><span><span></span></span>Circle</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="formField">
+          <h2>Fill with Shiba:</h2>
+          <ul class="radioButtonList">
+            <li>
+              <input type="radio" id="selectShibaTrue" name="selectShiba" value="true" checked />
+              <label for="selectShibaTrue"><span><span></span></span>Yes</label>
+            </li>
+            <li>
+              <input type="radio" id="selectShibaFalse" name="selectShiba" value="" />
+              <label for="selectShibaFalse"><span><span></span></span>No</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="formSubmit">
+          <button id="generate">Generate</button>
+          <button id="clear">Clear Screen</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="javascripts/api_services/getDoge.js"></script>
+    <script src="javascripts/components/shape.js"></script>
+    <script src="javascripts/components/shapeGenerator.js"></script>
+    <script src="javascripts/index.js"></script>
+  </body>
+</html>
