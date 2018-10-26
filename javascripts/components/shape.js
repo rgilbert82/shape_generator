@@ -7,8 +7,13 @@ class Shape {
     this.props = Object.freeze(props);    // contains color, shape, image, and ID values
     this.state = { imageLoaded: false };
 
+    this.imageHasLoaded     = this.imageHasLoaded.bind(this);
     this.addDogeToShape     = this.addDogeToShape.bind(this);     // Binding methods
     this.createShapeElement = this.createShapeElement.bind(this);
+  }
+
+  imageHasLoaded() {
+    return this.state.imageLoaded;
   }
 
   createShapeElement() {    // creates the DOM element
@@ -23,7 +28,7 @@ class Shape {
     // Does this shape have a dog image or not?
 
     if (this.props.shibaValue) {      // YES: Wait for a dog image from the API.
-      this.addDogeToShape(outerShape, innerShape);
+      this.addDogeToShape(innerShape);
     } else {                          // NO: Since there is no image,
       this.state.imageLoaded = true;  //     the ShapeGenerator doesn't have to
     }                                 //     wait to add the shape to the canvas.
@@ -31,7 +36,7 @@ class Shape {
     return outerShape;
   }
 
-  addDogeToShape(outerShape, innerShape) {  // Adds shiba image to a shape.
+  addDogeToShape(innerShape) {  // Adds shiba image to a shape.
     getDoge()  // Function is from the api_services folder. Returns a Promise.
       .then((imageSrc) => {
         const image = document.createElement('img');

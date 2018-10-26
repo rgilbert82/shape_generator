@@ -60,7 +60,7 @@ class ShapeGenerator {
     // Waits for the image to load before adding the shape to the canvas.
     // 5 seconds is the maximum wait time before the shape is added w/o an image.
 
-    if (shape.state.imageLoaded || tries <= 0) {
+    if (shape.imageHasLoaded() || tries <= 0) {
       this.addShapeToCanvas(shapeElement);
     } else {
       setTimeout(() => {
@@ -101,7 +101,7 @@ class ShapeGenerator {
 
     $(shapeElement).animate({
       height: `${shapeWidth}px`,
-      width: `${shapeWidth}px`
+      width:  `${shapeWidth}px`
     }, 1000).animate({
       top: '-20px'
     }, {
