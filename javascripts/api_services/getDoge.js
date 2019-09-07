@@ -6,6 +6,7 @@ function getDoge() {
   return new Promise((resolve, reject) => {
     const cors    = 'https://cors-proxy.htmldriven.com/?url=';  // CORS proxy
     const path    = 'http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true';
+    const url     = cors + path;
     const request = new XMLHttpRequest();
 
     request.onreadystatechange = () => {
@@ -18,7 +19,7 @@ function getDoge() {
       }
     }
 
-    request.open('GET', cors + path);
+    request.open('GET', url);
     request.send();
   });
 }
