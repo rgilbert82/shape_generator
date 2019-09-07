@@ -40,7 +40,7 @@ class Shape {
 
   addDogeToShapeNonAPI(innerShape) {
     const randomInteger = Math.ceil(Math.random() * 20);
-    const imageSrc = `/images/dogs/${randomInteger}.jpg`;
+    const imageSrc = `images/dogs/${randomInteger}.jpg`;
     const image = document.createElement('img');
 
     innerShape.appendChild(image);
